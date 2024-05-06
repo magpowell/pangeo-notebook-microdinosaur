@@ -25,5 +25,5 @@ USER ${NB_USER}
 
 RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
- && julia --eval 'using Pkg; pkg"add CloudMicrophysics"' \
+ && julia --eval 'using Pkg; pkg"add CloudMicrophysics"; Pkg.add(["CSV"]);' \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
