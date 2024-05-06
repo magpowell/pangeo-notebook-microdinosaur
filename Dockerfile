@@ -2,7 +2,7 @@ FROM pangeo/pangeo-notebook:2023.10.03
 
 RUN pip install git+https://github.com/google-research/neuralgcm
 RUN pip install git+https://github.com/google-research/dinosaur
-RUN pip install jupyterlab==4.1.6 gcsfs==2024.3.1 matplotlib==3.8.4
+RUN pip install jupyterlab==4.1.6 gcsfs==2024.3.1 matplotlib==3.8.4 julia==0.6.2
 
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
@@ -25,5 +25,5 @@ USER ${NB_USER}
 
 RUN export JUPYTER_DATA_DIR="$NB_PYTHON_PREFIX/share/jupyter" \
  && julia --eval 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia");' \
- && julia --eval 'using Pkg; pkg"add CloudMicrophysics"; Pkg.add(["CSV"]);' \
+ && julia --eval 'using Pkg; pkg"add CloudMicrophysics"; Pkg.add(["PyCall"]);' \
  && julia --eval 'using Pkg; Pkg.instantiate(); Pkg.resolve(); pkg"precompile"'
