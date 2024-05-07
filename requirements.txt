@@ -1,8 +1,8 @@
 dinosaur@git+https://github.com/google-research/dinosaur
 dm-haiku
 gin-config
-jax
-jaxlib==0.1.71+cuda111
+jax[cuda12_pip]
+jaxlib
 optax
 tensorflow_probability
 jupyterlab==4.1.6 
