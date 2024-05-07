@@ -1,7 +1,7 @@
 dinosaur@git+https://github.com/google-research/dinosaur
 dm-haiku
 gin-config
-jax
+jax[cuda12_pip]
 jaxlib
 optax
 tensorflow_probability
@@ -9,3 +9,4 @@ jupyterlab==4.1.6
 gcsfs==2024.3.1 
 matplotlib==3.8.4 
 julia==0.6.2
+nvidia-cudnn-cu11
