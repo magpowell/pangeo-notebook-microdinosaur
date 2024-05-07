@@ -2,10 +2,11 @@ dinosaur@git+https://github.com/google-research/dinosaur
 dm-haiku
 gin-config
 jax
-jaxlib
+jaxlib==0.1.71+cuda111
 optax
 tensorflow_probability
 jupyterlab==4.1.6 
 gcsfs==2024.3.1 
 matplotlib==3.8.4 
 julia==0.6.2
+nvidia-cudnn-cu11
