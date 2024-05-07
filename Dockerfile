@@ -1,8 +1,7 @@
-FROM pangeo/pangeo-notebook:2023.10.03
+FROM pangeo/ml-notebook
 
-RUN pip install git+https://github.com/google-research/neuralgcm
-RUN pip install git+https://github.com/google-research/dinosaur
-RUN pip install jupyterlab==4.1.6 gcsfs==2024.3.1 matplotlib==3.8.4 julia==0.6.2
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
